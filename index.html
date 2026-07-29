@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Softwarebois — Rampuram Ganesh Chaturthi</title>
+  <meta name="description"
+    content="Softwarebois — a youth group from Rampuram village celebrating Ganesh Chaturthi every year. Idols, immersion, lucky draws, and a lot of noise.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FBF2E3;
+      --cream-soft: #F4E6CE;
+      --ink: #2A1B12;
+      --ink-soft: #6B5642;
+      --rust: #BE5B2E;
+      --rust-deep: #8F4423;
+      --border: #E7D5B2;
+      --white: #FFFDF8;
+      --radius: 14px;
+      --max: 1400px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Work Sans', sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--rust);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        animation-duration: .001ms !important;
+        transition-duration: .001ms !important;
+      }
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(251, 242, 227, 0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--rust);
+
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+
+      transition: .25s ease;
+    }
+
+    .logo:hover {
+      transform: translateY(-1px);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+
+      border: 2px solid var(--border);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .12);
+    }
+
+    .logo span {
+      letter-spacing: -0.01em;
+    }
+
+    nav.primary-nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav.primary-nav .nav-link {
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--ink);
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: color .15s ease;
+    }
+
+    nav.primary-nav .nav-link:hover {
+      color: var(--rust);
+    }
+
+    .ig-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #f58529, #dd2a7b 55%, #8134af);
+      color: #fff;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 96px 24px 72px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      text-align: center;
+    }
+
+    .hero-logo {
+
+      width: 180px;
+      height: 180px;
+
+      object-fit: cover;
+
+      clip-path: circle(42%);
+
+      display: block;
+
+      margin: 0 auto 24px;
+
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: var(--rust);
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+
+      width: fit-content;
+      margin: 14px auto 22px;
+
+      position: relative;
+      left: 12px;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 0 auto 34px;
+      color: var(--ink-soft);
+      font-size: 1.08rem;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ==========================
+   Countdown
+========================== */
+
+    .countdown-card {
+      margin-top: 45px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .countdown-title {
+      font-family: 'Fraunces', serif;
+      color: var(--rust);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .countdown {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .count-box {
+
+      width: 125px;
+      height: 145px;
+
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 22px;
+
+      background: rgba(255, 255, 255, .55);
+
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      border: 1px solid rgba(255, 255, 255, .65);
+
+      box-shadow:
+        0 12px 30px rgba(0, 0, 0, .08),
+        inset 0 1px 0 rgba(255, 255, 255, .75);
+
+      transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+    }
+
+    .count-box span {
+
+      font-family: 'Fraunces', serif;
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: var(--rust);
+      line-height: 1;
+
+    }
+
+    .count-box small {
+
+      margin-top: 8px;
+
+      color: var(--ink-soft);
+
+      font-weight: 600;
+
+      letter-spacing: .05em;
+
+    }
+
+    .count-box small {
+
+      margin-top: 14px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .18em;
+
+      color: var(--ink-soft);
+
+      font-size: .72rem;
+
+      font-weight: 700;
+
+    }
+
+    .count-box::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: -45%;
+
+      background:
+        radial-gradient(circle,
+          rgba(255, 196, 120, .35),
+          transparent 70%);
+
+      pointer-events: none;
+
+    }
+
+    .count-box:hover {
+
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 18px 45px rgba(190, 91, 46, .25),
+        inset 0 1px 0 rgba(255, 255, 255, .8);
+
+    }
+
+    /* ==========================
+   Countdown Flip Animation
+========================== */
+
+    @keyframes flipNumber {
+
+      0% {
+        transform: rotateX(90deg);
+        opacity: 0;
+      }
+
+      50% {
+        transform: rotateX(-15deg);
+      }
+
+      100% {
+        transform: rotateX(0);
+        opacity: 1;
+      }
+
+    }
+
+    .flip {
+      animation: flipNumber .45s ease;
+      transform-origin: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 26px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: transform .15s ease, background .15s ease;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-solid {
+      background: var(--rust);
+      color: #fff;
+    }
+
+    .btn-solid:hover {
+      background: var(--rust-deep);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      border-color: var(--border);
+      color: var(--ink);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--rust);
+      color: var(--rust);
+      transform: translateY(-1px);
+    }
+
+    /* Garland divider — signature element */
+    .garland {
+      height: 22px;
+      margin: 0 auto 8px;
+      max-width: 220px;
+      opacity: 0.85;
+    }
+
+    /* Section shell */
+    section {
+      padding: 64px 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .page-section {
+      display: none;
+    }
+
+    .page-section.active {
+      display: block;
+    }
+
+    /* Navigation */
+    nav.primary-nav .nav-link {
+      position: relative;
+      padding: 10px 18px;
+      border-radius: 999px;
+      transition: all .25s ease;
+    }
+
+    /* Hover */
+    nav.primary-nav .nav-link:hover {
+      color: var(--rust);
+      background: rgba(190, 91, 46, .08);
+    }
+
+    /* Active Section */
+    nav.primary-nav .nav-link.active-link {
+      color: var(--rust);
+      font-weight: 700;
+      background: rgba(190, 91, 46, .12);
+    }
+
+    /* Animated underline */
+    nav.primary-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 18%;
+      bottom: -8px;
+      width: 64%;
+      height: 3px;
+      background: var(--rust);
+      border-radius: 20px;
+      transform: scaleX(0);
+      transition: transform .25s ease;
+    }
+
+    nav.primary-nav .nav-link.active-link::after {
+      transform: scaleX(1);
+    }
+
+    .section-head {
+      max-width: 640px;
+      margin-bottom: 40px;
+    }
+
+    .section-head h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      margin: 10px 0 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-head p {
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+    }
+
+    /* Year meta label */
+    .year-meta {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+
+    .years-grid {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      padding-bottom: 16px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .years-grid::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .years-grid::-webkit-scrollbar-thumb {
+      background: #d5c3a3;
+      border-radius: 20px;
+    }
+
+    .year-col {
+      flex: 0 0 340px;
+      /* Width of each year card */
+      scroll-snap-align: start;
+    }
+
+    .year-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+
+    .year-head h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.35rem;
+      color: var(--rust);
+      margin: 0;
+    }
+
+    .media-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .media-card .thumb {
+      aspect-ratio: 4 / 5;
+      background: #1b120c;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .media-card .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    .media-card:hover .thumb img {
+      transform: scale(1.04);
+    }
+
+    .media-card .card-body {
+      padding: 14px 16px 18px;
+    }
+
+    .media-card .card-body .count {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      margin: 0 0 4px;
+    }
+
+    .media-card .card-body .sponsor {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--rust);
+      margin: 0 0 14px;
+    }
+
+    .media-card .card-body a.btn {
+      width: 100%;
+      text-align: center;
+      display: block;
+    }
+
+    .empty-card {
+      border: 1.5px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      text-align: center;
+      color: var(--ink-soft);
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .empty-card strong {
+      display: block;
+      color: var(--ink);
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+
+    /* Winners */
+    /* Winners */
+
+    .winners-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      margin-top: 40px;
+      align-items: start;
+    }
+
+    .winner-table-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+      transition: .25s ease;
+    }
+
+    .winner-table-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .winner-table-card h3 {
+      margin: 0;
+      padding: 18px;
+      background: var(--rust);
+      color: #fff;
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      text-align: center;
+    }
+
+    .winner-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .winner-table th {
+      background: var(--cream-soft);
+      padding: 18px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .winner-table td {
+      padding: 18px;
+      border-top: 1px solid var(--border);
+      vertical-align: middle;
+      height: 74px;
+    }
+
+    .winner-table th:nth-child(1),
+    .winner-table td:nth-child(1) {
+      width: 32%;
+    }
+
+    .winner-table th:nth-child(2),
+    .winner-table td:nth-child(2) {
+      width: 28%;
+    }
+
+    .winner-table th:nth-child(3),
+    .winner-table td:nth-child(3) {
+      width: 40%;
+    }
+
+    .prize {
+      color: var(--rust);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .winner-table td:nth-child(2) {
+      white-space: nowrap;
+    }
+
+    .winner-table td:last-child {
+      white-space: nowrap;
+    }
+
+    .winner-table tr:hover {
+      background: #fcf6ec;
+    }
+
+    @media(max-width:1200px) {
+
+      .winners-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    /* Gang — horizontal scroll strip */
+    /* Gang — Horizontal Image Carousel */
+
+    .gang-scroll {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+
+      gap: 0;
+      padding: 20px 0;
+
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    .gang-scroll::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Edge, Safari */
+    }
+
+    .gang-item {
+      flex: 0 0 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      scroll-snap-align: center;
+    }
+
+    .gang-item img {
+      width: min(900px, 100%);
+      height: 650px;
+      object-fit: cover;
+
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .10);
+
+      cursor: pointer;
+      transition: .3s ease;
+    }
+
+    .gang-item img:hover {
+      transform: scale(1.02);
+    }
+
+    .gang-empty {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 460px;
+      border: 1.5px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      text-align: center;
+      color: var(--ink-soft);
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .gang-empty strong {
+      display: block;
+      color: var(--ink);
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+
+    .scroll-hint {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      margin: -24px 0 20px;
+    }
+
+    /* ==========================
+   Gang Pagination Dots
+========================== */
+
+    .gang-dots {
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-top: 22px;
+
+    }
+
+    .gang-dot {
+
+      width: 12px;
+
+      height: 12px;
+
+      border-radius: 50%;
+
+      background: #d8c4a4;
+
+      cursor: pointer;
+
+      transition: all .35s ease;
+
+    }
+
+    .gang-dot:hover {
+
+      transform: scale(1.2);
+
+    }
+
+    .gang-dot.active {
+
+      width: 34px;
+
+      border-radius: 999px;
+
+      background: var(--rust);
+
+      box-shadow: 0 0 12px rgba(190, 91, 46, .35);
+
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 12, 7, 0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 300;
+      padding: 24px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 88vh;
+      border-radius: 8px;
+      cursor: zoom-in;
+      transition: transform .25s ease;
+      touch-action: pinch-zoom;
+    }
+
+    .lightbox img.zoomed {
+      transform: scale(1.8);
+      cursor: zoom-out;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.14);
+      border: none;
+      color: #fff;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    /* ===========================
+   DONATE SECTION
+=========================== */
+
+
+    /* Members Section */
+
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .member-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 25px;
+      text-align: center;
+      transition: .3s;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+    }
+
+    .member-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .member-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: auto;
+      border: 4px solid var(--border);
+    }
+
+    .member-card h3 {
+      margin: 18px 0 8px;
+      color: var(--rust);
+      font-family: 'Fraunces', serif;
+    }
+
+    .member-role {
+      color: var(--ink-soft);
+      font-weight: 600;
+    }
+
+    .donate-card {
+      max-width: 700px;
+      margin: auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+    }
+
+    .qr-box {
+      width: 380px;
+      height: 380px;
+      margin: 25px auto;
+      border: 2px dashed var(--border);
+      border-radius: 20px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px;
+    }
+
+    .qr-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .upi-title {
+      font-weight: 700;
+      margin-top: 20px;
+      color: var(--rust);
+    }
+
+    .upi-id {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 14px auto;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-weight: 600;
+    }
+
+    .copy-btn {
+      border: none;
+      background: var(--rust);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .upi-apps {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .upi-apps span {
+      background: var(--cream-soft);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .donation-uses {
+      margin-top: 35px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      text-align: left;
+    }
+
+    .donation-uses div {
+      background: #fffaf2;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 15px;
+    }
+
+    .donate-button {
+      margin-top: 28px;
+    }
+
+    /* Find us */
+    .find-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      max-width: 480px;
+    }
+
+    .find-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      margin: 0 0 10px;
+    }
+
+    .find-card address {
+      font-style: normal;
+      color: var(--ink-soft);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 0.88rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--rust);
+      font-weight: 600;
+    }
+
+    @media (max-width: 760px) {
+      nav.primary-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        flex-direction: column;
+        gap: 0;
+        border-bottom: 1px solid var(--border);
+        display: none;
+      }
+
+      nav.primary-nav.open {
+        display: flex;
+      }
+
+      nav.primary-nav .nav-link {
+        padding: 14px 24px;
+        border-top: 1px solid var(--border);
+        width: 100%;
+        text-align: left;
+      }
+
+      .menu-btn {
+        display: inline-block;
+      }
+
+      .header-row .ig-pill {
+        display: none;
+      }
+
+      .donate-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .qr-box {
+        max-width: 220px;
+      }
+    }
+
+    #laddu-auction .year-col {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* Laddu Auction Image */
+    #laddu-auction .media-card .thumb {
+      aspect-ratio: 1 / 1;
+      height: 420px;
+    }
+
+    #laddu-auction .media-card .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-row">
+      <button type="button" class="logo" id="logoBtn">
+        <img src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/QRCode/Logo.png"
+          alt="Softwarebois Logo" class="logo-icon">
+        <span>Softwarebois</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav class="primary-nav" id="primaryNav">
+        <button type="button" class="nav-link" data-target="#idols">Idols</button>
+        <button type="button" class="nav-link" data-target="#nimarjanam">Nimarjanam</button>
+        <button type="button" class="nav-link" data-target="#winners">Winners</button>
+        <button type="button" class="nav-link" data-target="#laddu-auction">Laddu Auction</button>
+        <button type="button" class="nav-link" data-target="#gang">The Gang</button>
+        <button type="button" class="nav-link" data-target="#members">Members</button>
+        <button type="button" class="nav-link" data-target="#donate">Donate</button>
+        <button type="button" class="nav-link" data-target="#find-us">Find us</button>
+      </nav>
+      <a class="ig-pill" href="https://www.instagram.com/software_bois" target="_blank" rel="noopener">
+        📷 @software_bois
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <div class="hero">
+      <img class="hero-logo"
+        src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/QRCode/Logo.png"
+        alt="Softwarebois Rampuram emblem — Lord Ganesha badge logo">
+      <div class="eyebrow">Rampuram · Pendurthi · 531173</div>
+      <h1>Softwarebois</h1>
+      <p>A youth group from Rampuram village celebrating Ganesh Chaturthi every year — idols, immersion, lucky draws,
+        and a lot of noise. This is our home on the internet.</p>
+      <div class="cta-row">
+        <button type="button" class="btn btn-solid" data-target="#idols">See this year's idol</button>
+        <a href="https://www.instagram.com/software_bois" target="_blank" rel="noopener" class="btn btn-outline">Follow
+          on Instagram</a>
+      </div>
+      <div class="countdown-card">
+
+        <div class="countdown-title">
+          🪔 Ganesh Chaturthi Begins In
+        </div>
+
+        <div class="countdown" id="countdown">
+
+          <div class="count-box">
+            <span id="days">00</span>
+            <small>Days</small>
+          </div>
+
+          <div class="count-box">
+            <span id="hours">00</span>
+            <small>Hours</small>
+          </div>
+
+          <div class="count-box">
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+          </div>
+
+          <div class="count-box">
+            <span id="seconds">00</span>
+            <small>Seconds</small>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- IDOLS GALLERY -->
+    <section id="idols" class="page-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Gallery</div>
+          <h2>Our idols, year by year</h2>
+          <p>A growing archive of the Ganesha idols we've welcomed home each year — the colors, the flowers, the light.
+          </p>
+        </div>
+
+        <div class="years-grid">
+          <div class="year-col">
+            <div class="year-head">
+              <h3>2025</h3>
+              <span class="year-meta">27-Aug-2025</span>
+            </div>
+            <div class="media-card">
+              <div class="thumb">
+                <img
+                  src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/2025/Lord%20ganesh_2025.jpg"
+                  alt="Softwarebois 2025 Ganesha idol" loading="lazy">
+              </div>
+              <div class="card-body">
+                <p class="sponsor">Idol sponsored by Choppa Ravi</p>
+                <a class="btn btn-solid" href="https://photos.app.goo.gl/R85nDbXAaZJMZVMs9" target="_blank"
+                  rel="noopener">View full gallery</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="year-col">
+            <div class="year-head">
+              <h3>2024</h3>
+              <span class="year-meta">7-Sept-2024</span>
+            </div>
+            <div class="media-card">
+              <div class="thumb">
+                <img
+                  src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/2024/LordGanesh_2024.JPG"
+                  alt="Softwarebois 2024 Ganesha idol" loading="lazy">
+              </div>
+              <div class="card-body">
+                <p class="sponsor">Idol sponsored by Kranti Kiran</p>
+                <a class="btn btn-solid" href="https://photos.app.goo.gl/R85nDbXAaZJMZVMs9" target="_blank"
+                  rel="noopener">View full gallery</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="year-col">
+            <div class="year-head">
+              <h3>2023</h3>
+              <span class="year-meta">19-Sept-2023</span>
+            </div>
+            <div class="media-card">
+              <div class="thumb">
+                <img
+                  src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/2023/lord%20ganesh_2023.png"
+                  alt="Softwarebois 2023 Ganesha idol" loading="lazy">
+              </div>
+              <div class="card-body">
+                <p class="sponsor">Idol sponsored by Annamreddi Venu </p>
+                <a class="btn btn-solid" href="https://photos.app.goo.gl/R85nDbXAaZJMZVMs9" target="_blank"
+                  rel="noopener">View full gallery</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="year-col">
+            <div class="year-head">
+              <h3>2022</h3>
+              <span class="year-meta">31-Aug-2022</span>
+            </div>
+            <div class="media-card">
+              <div class="thumb">
+                <img
+                  src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/2022/lord%20ganesh_2022.png"
+                  alt="Softwarebois 2022 Ganesha idol gallery cover" loading="lazy">
+              </div>
+              <div class="card-body">
+                <p class="sponsor">Idol sponsored by Senior Team</p>
+                <a class="btn btn-solid" href="https://photos.app.goo.gl/9HiCBBxJBaT9d7JE8" target="_blank"
+                  rel="noopener">View full gallery</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="year-col">
+            <div class="year-head">
+              <h3>2021</h3>
+              <span class="year-meta">10-Sept-2021</span>
+            </div>
+
+            <div class="media-card">
+              <div class="thumb">
+                <img
+                  src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/2021/lordganesh_2021.jpeg"
+                  alt="Ganesh Idol 2021">
+              </div>
+
+              <div class="card-body">
+                <p class="sponsor">Idol sponsored by lagudu naveen</p>
+                <a href="#" class="btn btn-solid">View full gallery</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="year-col">
+            <div class="year-head">
+              <h3>2019</h3>
+              <span class="year-meta">02-Sept-2019</span>
+            </div>
+
+            <div class="media-card">
+              <div class="thumb">
+                <img
+                  src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/2019/lordganesh_2019.jpeg"
+                  alt="Ganesh Idol 2019">
+              </div>
+
+              <div class="card-body">
+                <p class="sponsor">Idol sponsored by software bois</p>
+                <a href="#" class="btn btn-solid">View full gallery</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NIMARJANAM -->
+    <section id="nimarjanam" class="page-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Immersion</div>
+          <h2>Nimarjanam</h2>
+          <p>The final send-off — colors, water, and the walk to the pond. Photos and videos from each year.</p>
+        </div>
+
+        <div class="years-grid">
+          <div class="year-col">
+            <div class="year-head">
+              <h3>2025</h3>
+              <span class="year-meta">S31 August 2022, 2022</span>
+            </div>
+            <div class="media-card">
+              <div class="thumb">
+                <img
+                  src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/2025/Lord%20ganesh_2025.jpg"
+                  alt="Softwarebois 2025 Nimarjanam immersion" loading="lazy">
+              </div>
+              <div class="card-body">
+                <p class="count">31 August 2022 2022 · 165 photos</p>
+                <a class="btn btn-solid" href="https://photos.app.goo.gl/hHdzkdNEknZYwUfs5" target="_blank"
+                  rel="noopener">View immersion album</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="year-col">
+            <div class="year-head">
+              <h3>2024</h3>
+              <span class="year-meta">Sep 23 – 24, 2022</span>
+            </div>
+            <div class="media-card">
+              <div class="thumb">
+                <img
+                  src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/2024/LordGanesh_2024.JPG"
+                  alt="Softwarebois 2024 Nimarjanam immersion" loading="lazy">
+              </div>
+              <div class="card-body">
+                <p class="count">Sep 23 – 24, 2022 · 165 photos</p>
+                <a class="btn btn-solid" href="https://photos.app.goo.gl/hHdzkdNEknZYwUfs5" target="_blank"
+                  rel="noopener">View immersion album</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="year-col">
+            <div class="year-head">
+              <h3>2023</h3>
+              <span class="year-meta">Sep 23 – 24, 2022</span>
+            </div>
+            <div class="media-card">
+              <div class="thumb">
+                <img
+                  src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/2023/lord%20ganesh_2023.png"
+                  alt="Softwarebois 2023 Nimarjanam immersion" loading="lazy">
+              </div>
+              <div class="card-body">
+                <p class="count">Sep 23 – 24, 2023 · 165 photos</p>
+                <a class="btn btn-solid" href="https://photos.app.goo.gl/hHdzkdNEknZYwUfs5" target="_blank"
+                  rel="noopener">View immersion album</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="year-col">
+            <div class="year-head">
+              <h3>2022</h3>
+              <span class="year-meta">165 photos</span>
+            </div>
+            <div class="media-card">
+              <div class="thumb">
+                <img
+                  src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/2022/lord%20ganesh_2022.png"
+                  alt="Softwarebois 2022 Nimarjanam immersion cover" loading="lazy">
+              </div>
+              <div class="card-body">
+                <p class="count">Sep 23 – 24, 2022 · 165 photos</p>
+                <a class="btn btn-solid" href="https://photos.app.goo.gl/hHdzkdNEknZYwUfs5" target="_blank"
+                  rel="noopener">View immersion album</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WINNERS -->
+    <section id="winners" class="page-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Lucky Draw</div>
+          <h2>Winners each year</h2>
+          <p>Names pulled from the box, cheers earned fair and square.</p>
+        </div>
+        <div class="winners-grid">
+
+          <!-- 2025 -->
+          <div class="winner-table-card">
+
+            <h3>🏆 Lucky Draw Winners - 2025</h3>
+
+            <table class="winner-table">
+
+              <thead>
+
+                <tr>
+
+                  <th>Prize</th>
+
+                  <th>Winner Name</th>
+
+                  <th>Prize Item</th>
+
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+
+                  <td class="prize">🥇 1st Prize</td>
+
+                  <td>Sai ganesh</td>
+
+                  <td>5Kg Ganeshladdu</td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="prize">🥈 2nd Prize</td>
+
+                  <td>Akhil</td>
+
+                  <td>4kg Ganashladdu</td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="prize">🥉 3rd Prize</td>
+
+                  <td>Uday </td>
+
+                  <td>3kg Ganeshladdu</td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <!-- 2024 -->
+
+          <div class="winner-table-card">
+
+            <h3>🏆 Lucky Draw Winners - 2024</h3>
+
+            <table class="winner-table">
+
+              <thead>
+
+                <tr>
+
+                  <th>Prize</th>
+
+                  <th>Winner Name</th>
+
+                  <th>Prize Item</th>
+
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+
+                  <td class="prize">🥇 1st Prize</td>
+
+                  <td>Allu shanmukh</td>
+
+                  <td>5Kg laddu</td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="prize">🥈 2nd Prize</td>
+
+                  <td>Vinay.A</td>
+
+                  <td>4kg laddu</td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="prize">🥉 3rd Prize</td>
+
+                  <td>Ramesh</td>
+
+                  <td>3kg laddu</td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <!-- 2023 -->
+
+          <div class="winner-table-card">
+
+            <h3>🏆 Lucky Draw Winners - 2023</h3>
+
+            <table class="winner-table">
+
+              <thead>
+
+                <tr>
+
+                  <th>Prize</th>
+
+                  <th>Winner Name</th>
+
+                  <th>Prize Item</th>
+
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+
+                  <td class="prize">🥇 1st Prize</td>
+
+                  <td>Ganesh</td>
+
+                  <td>3kg Ganeshladdu</td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="prize">🥈 2nd Prize</td>
+
+                  <td>Renuka</td>
+
+                  <td>4kg Ganashladdu</td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="prize">🥉 3rd Prize</td>
+
+                  <td>Sai kiran</td>
+
+                  <td>3kg Ganeshladdu</td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LADDU AUCTION -->
+    <section id="laddu-auction" class="page-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Auction</div>
+          <h2>Laddu Auction</h2>
+          <p>Bidding for the first laddu — all in good fun, and it helps fund next year's celebration too.</p>
+        </div>
+        <div class="years-grid">
+          <div class="year-col">
+            <div class="year-head">
+              <h3>2025</h3>
+              <span class="year-meta">₹16,000</span>
+            </div>
+            <div class="media-card">
+              <div class="thumb">
+                <img
+                  src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/2025/Laddu%20Auction_2025.jpg"
+                  alt="Laddu auction winners Kiran and Sravan, 2025" loading="lazy">
+              </div>
+              <div class="card-body">
+                <p class="count">Winning bid · ₹16,000</p>
+                <p class="sponsor">Won by Kiran &amp; Sravan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE GANG — scrollable, zoomable -->
+    <section id="gang" class="page-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">The Gang</div>
+          <h2>Softwarebois, together</h2>
+          <p>The people who make this happen every year.</p>
+        </div>
+        <p class="scroll-hint">← Scroll sideways to browse · tap a photo to zoom in →</p>
+        <div class="gang-scroll" id="gangScroll">
+
+          <div class="gang-item">
+            <img
+              src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/Gang%20Pics/Gang1.jpg">
+          </div>
+
+          <div class="gang-item">
+            <img
+              src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/Gang%20Pics/Gang2.JPG">
+          </div>
+          <div class="gang-item">
+            <img
+              src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/Gang%20Pics/Gang3.jpg">
+
+          </div>
+          <div class="gang-item">
+            <img
+              src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/Gang%20Pics/Gang4.jpeg">
+
+          </div>
+
+        </div>
+        <div class="gang-dots" id="gangDots"></div>
+      </div>
+    </section>
+    <section id="members" class="page-section">
+
+      <div class="wrap">
+
+        <div class="section-head">
+          <div class="eyebrow">Softwarebois</div>
+          <h2>Meet Our Members</h2>
+
+          <p>
+            The dedicated members who work together every year to make our
+            Ganesh Chaturthi celebrations successful.
+          </p>
+
+        </div>
+
+        <div class="members-grid">
+
+          <!-- Member -->
+
+          <div class="member-card">
+
+            <img
+              src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/Members/Tharuntej.jpeg"
+              class="member-photo">
+
+            <h3>Tarun Teja</h3>
+
+            <p class="member-role">Founder</p>
+
+          </div>
+
+          <!-- Member -->
+
+          <div class="member-card">
+
+            <img
+              src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/Members/Pavan.png"
+              class="member-photo">
+
+            <h3>Pavan</h3>
+
+            <p class="member-role">Organizer/Treasurer</p>
+
+          </div>
+
+          <!-- Member -->
+
+          <div class="member-card">
+
+            <img
+              src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/Members/Akhilhari.jpeg"
+              class="member-photo">
+
+            <h3>Akhil</h3>
+
+            <p class="member-role">Organizer</p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- DONATE -->
+    <section id="donate" class="page-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Support</div>
+          <h2>Chip in for next year</h2>
+          <p>Scan the QR with any UPI app — PhonePe, Google Pay, Paytm — to contribute to the pandal, decorations, and
+            prizes.</p>
+        </div>
+        <div class="donate-card">
+
+          <h3>❤️ Support Softwarebois</h3>
+
+          <p>
+            Every contribution helps us celebrate Ganesh Chaturthi in Rampuram.
+          </p>
+
+          <div class="qr-box">
+            <img
+              src="https://qctxfsjabmqnnkzsfcrx.supabase.co/storage/v1/object/public/Ganesh%20Images/QRCode/QRCode.jpeg">
+          </div>
+
+          <div class="upi-title">
+            Scan using any UPI App
+          </div>
+
+          <div class="upi-apps">
+            <span>📱 PhonePe</span>
+            <span>🟢 Google Pay</span>
+            <span>💳 Paytm</span>
+            <span>🏦 BHIM</span>
+          </div>
+
+          <div class="upi-title">
+            UPI ID
+          </div>
+
+          <div class="upi-id">
+            <span id="upiText">9059307481-3@ybl</span>
+
+            <button class="copy-btn" onclick="copyUPI()">
+              Copy
+            </button>
+          </div>
+
+          <a class="btn btn-solid donate-button"
+            href="upi://pay?pa=9059307481-3@ybl&pn=Softwarebois&tn=Ganesh Donation&cu=INR">
+            Donate via UPI
+          </a>
+
+          <div class="donation-uses">
+            <div>🎭 Ganesh Idol</div>
+            <div>🎪 Pandal</div>
+            <div>💡 Decorations</div>
+            <div>🔊 Sound System</div>
+            <div>🍛 Prasadam</div>
+            <div>🎁 Lucky Draw Gifts</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FIND US -->
+    <section id="find-us" class="page-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Find Us</div>
+          <h2>Rampuram, 531173</h2>
+        </div>
+        <div class="find-card">
+          <h3>📍 Softwarebois</h3>
+
+          <address>
+            Rampuram Village<br>
+            Pendurthi (M), Visakhapatnam<br>
+            Andhra Pradesh - 531173
+          </address>
+
+          <hr style="margin:20px 0; border:none; border-top:1px solid var(--border);">
+
+          <h3>📞 Contact Us</h3>
+
+          <p>
+            <strong>Phone</strong><br>
+            📱 9059307481<br>
+            📱 9391277632<br>
+            📱 7386616435
+          </p>
+
+          <p>
+            <strong>Email</strong><br>
+            ✉️ softwarebois30@gmail.com
+          </p>
+
+          <a class="btn btn-solid" href="https://maps.app.goo.gl/d3GkymQEe9AteNZs6" target="_blank" rel="noopener">
+            📍 Open in Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Softwarebois · Rampuram, Visakhapatnam &nbsp;·&nbsp;
+    <a href="https://www.instagram.com/software_bois" target="_blank" rel="noopener">@software_bois</a>
+  </footer>
+
+  <!-- Lightbox for zoomable team photos -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('primaryNav');
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+
+    // Section switching — plain buttons with data-target, no href/pushState involved
+    const pageSections = document.querySelectorAll('.page-section');
+    const validIds = Array.from(pageSections).map(s => '#' + s.id);
+    const navLinks = nav.querySelectorAll('.nav-link');
+
+    function showSection(hash) {
+      if (!validIds.includes(hash)) hash = '#idols';
+      pageSections.forEach(s => s.classList.toggle('active', ('#' + s.id) === hash));
+      navLinks.forEach(btn => btn.classList.toggle('active-link', btn.getAttribute('data-target') === hash));
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+
+    document.querySelectorAll('[data-target]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        showSection(btn.getAttribute('data-target'));
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.getElementById('logoBtn').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    showSection('#idols');
+
+    // Gang gallery: click a photo to open the zoomable lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    function wireGangItems() {
+      document.querySelectorAll('.gang-item img').forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightboxImg.classList.remove('zoomed');
+          lightbox.classList.add('open');
+          lightbox.setAttribute('aria-hidden', 'false');
+        });
+      });
+    }
+    wireGangItems();
+
+    /* ==========================
+       Auto Sliding Gang Gallery
+    ========================== */
+
+    const gangScroll = document.getElementById("gangScroll");
+    const gangItems = document.querySelectorAll(".gang-item");
+    const gangDots = document.getElementById("gangDots");
+
+    /* Create pagination dots */
+
+    gangItems.forEach((_, index) => {
+
+      const dot = document.createElement("span");
+
+      dot.className = "gang-dot";
+
+      if (index === 0) {
+        dot.classList.add("active");
+      }
+
+      dot.addEventListener("click", () => {
+
+        currentIndex = index;
+
+        updateDots();
+
+        gangScroll.scrollTo({
+          left: index * gangScroll.clientWidth,
+          behavior: "smooth"
+        });
+
+      });
+
+      gangDots.appendChild(dot);
+
+    });
+
+    function updateDots() {
+
+      document.querySelectorAll(".gang-dot").forEach((dot, index) => {
+
+        dot.classList.toggle("active", index === currentIndex);
+
+      });
+
+    }
+
+    let currentIndex = 0;
+
+    function slideGangImages() {
+
+      currentIndex++;
+
+      if (currentIndex >= gangItems.length) {
+        currentIndex = 0;
+      }
+      updateDots();
+      gangScroll.scrollTo({
+        left: currentIndex * gangScroll.clientWidth,
+        behavior: "smooth"
+      });
+    }
+
+    // Auto slide every 4 seconds
+    let autoSlide = setInterval(slideGangImages, 4000);
+
+    // Pause while user interacts
+    gangScroll.addEventListener("mouseenter", () => {
+      clearInterval(autoSlide);
+    });
+
+    // Resume when mouse leaves
+    gangScroll.addEventListener("mouseleave", () => {
+      autoSlide = setInterval(slideGangImages, 4000);
+    });
+
+    // Update index if user scrolls manually
+    gangScroll.addEventListener("scroll", () => {
+
+      currentIndex = Math.round(
+        gangScroll.scrollLeft / gangScroll.clientWidth
+      );
+
+      updateDots();
+
+    });
+
+    /* ========================== */
+
+    lightboxImg.addEventListener('click', () => lightboxImg.classList.toggle('zoomed'));
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.classList.remove('zoomed');
+    }
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+    function copyUPI() {
+
+      navigator.clipboard.writeText("9059307481-3@ybl");
+
+      alert("UPI ID copied successfully!");
+
+    }
+
+    /* ==========================
+   Ganesh Countdown
+========================== */
+
+    const eventDate = new Date("2026-09-14T00:00:00");
+    function updateValue(id, value) {
+
+      const el = document.getElementById(id);
+
+      const formatted = String(value).padStart(2, "0");
+
+      if (el.textContent !== formatted) {
+
+        el.textContent = formatted;
+
+        el.classList.remove("flip");
+
+        void el.offsetWidth;
+
+        el.classList.add("flip");
+
+      }
+
+    }
+
+    function updateCountdown() {
+
+      const now = new Date();
+
+      const diff = eventDate - now;
+
+      if (diff <= 0) {
+
+        document.getElementById("countdown").innerHTML =
+          "<h2>🎉 Happy Ganesh Chaturthi!</h2>";
+
+        return;
+
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      updateValue("days", days);
+
+      updateValue("hours", hours);
+
+      updateValue("minutes", minutes);
+
+      updateValue("seconds", seconds);
+    }
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+  </script>
+
+
+
+</body>
+
+</html>
