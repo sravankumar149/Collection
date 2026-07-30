@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import Image from "next/image";
+import { createPortal } from "react-dom";
 import type { ColumnsType } from "antd/es/table";
 import {
   BankOutlined,
@@ -10,6 +11,7 @@ import {
   CalendarOutlined,
   CameraOutlined,
   CheckCircleOutlined,
+  CloseOutlined,
   CopyOutlined,
   CrownOutlined,
   EnvironmentOutlined,
@@ -30,7 +32,6 @@ import {
   Button,
   Card,
   Carousel,
-  Drawer,
   Modal,
   Table,
   Tag,
@@ -56,6 +57,13 @@ const navItems = [
 ];
 
 const idols = [
+  {
+    year: "2026",
+    date: "14 Sep 2026",
+    sponsor: "Akhil",
+    image: `${ASSET_BASE}/2025/Lord%20ganesh_2025.jpg`,
+    alt: "Softwarebois 2026 Ganesha idol",
+  },
   {
     year: "2025",
     date: "27 Aug 2025",
@@ -94,6 +102,7 @@ const idols = [
     sponsor: "Lagudu Naveen",
     image: `${ASSET_BASE}/2021/lordganesh_2021.jpeg`,
     alt: "Softwarebois 2021 Ganesha idol",
+    album: "https://photos.app.goo.gl/9HiCBBxJBaT9d7JE8"
   },
   {
     year: "2019",
@@ -101,6 +110,7 @@ const idols = [
     sponsor: "Softwarebois",
     image: `${ASSET_BASE}/2019/lordganesh_2019.jpeg`,
     alt: "Softwarebois 2019 Ganesha idol",
+    album: "https://photos.app.goo.gl/9HiCBBxJBaT9d7JE8"
   },
 ];
 
@@ -132,6 +142,18 @@ const nimarjanam = [
     image: `${ASSET_BASE}/2022/lord%20ganesh_2022.png`,
     alt: "Softwarebois 2022 Nimarjanam immersion",
     album: "https://photos.app.goo.gl/hHdzkdNEknZYwUfs5",
+  },
+  {
+    year: "2021",
+    meta: "Immersion album",
+    image: `${ASSET_BASE}/2021/lordganesh_2021.jpeg`,
+    alt: "Softwarebois 2021 Nimarjanam immersion",
+  },
+  {
+    year: "2019",
+    meta: "Immersion album",
+    image: `${ASSET_BASE}/2019/lordganesh_2019.jpeg`,
+    alt: "Softwarebois 2019 Nimarjanam immersion",
   },
 ];
 
@@ -233,7 +255,21 @@ const gangImages = [
   },
 ];
 
-const members = [
+type Member =
+  | {
+      name: string;
+      role: string;
+      image: string;
+      initials?: never;
+    }
+  | {
+      name: string;
+      role: string;
+      initials: string;
+      image?: never;
+    };
+
+const members: Member[] = [
   {
     name: "Tarun Teja",
     role: "Founder",
@@ -248,6 +284,31 @@ const members = [
     name: "Akhil",
     role: "Organizer",
     image: `${ASSET_BASE}/Members/Akhilhari.jpeg`,
+  },
+  {
+    name: "Member 04",
+    role: "Volunteer",
+    initials: "S4",
+  },
+  {
+    name: "Member 05",
+    role: "Volunteer",
+    initials: "S5",
+  },
+  {
+    name: "Member 06",
+    role: "Volunteer",
+    initials: "S6",
+  },
+  {
+    name: "Member 07",
+    role: "Volunteer",
+    initials: "S7",
+  },
+  {
+    name: "Member 08",
+    role: "Volunteer",
+    initials: "S8",
   },
 ];
 
@@ -441,6 +502,28 @@ function SiteHeader() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!drawerOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setDrawerOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [drawerOpen]);
+
   const links = (
     <>
       {navItems.map((item) => (
@@ -457,75 +540,116 @@ function SiteHeader() {
   );
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#ead8bd] bg-[#fff8ed]/92 backdrop-blur-xl">
-      <div className="container-page flex min-h-[74px] items-center justify-between gap-4">
-        <a className="flex items-center gap-3" href="#top" aria-label="Softwarebois home">
-          <Image
-            alt="Softwarebois logo"
-            className="h-11 w-11 rounded-full border border-[#ead8bd] object-cover"
-            height={44}
-            loading="eager"
-            src={logoUrl}
-            width={44}
-          />
-          <span className="font-display text-xl font-black text-[#9b481f]">
-            Softwarebois
-          </span>
-        </a>
-
-        <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary navigation">
-          {links}
-        </nav>
-
-        <div className="hidden items-center gap-2 lg:flex xl:hidden">
-          <a className="nav-pill" href="#donate">
-            Donate
+    <>
+      <header className="sticky top-0 z-50 border-b border-[#ead8bd] bg-[#fff8ed]/92 backdrop-blur-xl">
+        <div className="container-page flex min-h-[74px] items-center justify-between gap-4">
+          <a className="flex items-center gap-3" href="#top" aria-label="Softwarebois home">
+            <Image
+              alt="Softwarebois logo"
+              className="h-11 w-11 rounded-full border border-[#ead8bd] object-cover"
+              height={44}
+              loading="eager"
+              src={logoUrl}
+              width={44}
+            />
+            <span className="font-display text-xl font-black text-[#9b481f]">
+              Softwarebois
+            </span>
           </a>
-          <a className="nav-pill" href={instagramUrl} target="_blank" rel="noreferrer">
-            <InstagramOutlined />
-            <span className="ml-2">Instagram</span>
-          </a>
-        </div>
 
-        <div className="flex items-center gap-2">
-          <Button
-            className="hidden md:inline-flex"
-            href={instagramUrl}
-            icon={<InstagramOutlined />}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Follow
-          </Button>
-          <Button
-            aria-label="Open navigation menu"
-            className="xl:hidden"
-            icon={<MenuOutlined />}
-            onClick={() => setDrawerOpen(true)}
-          />
-        </div>
-      </div>
+          <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary navigation">
+            {links}
+          </nav>
 
-      <Drawer
-        title="Softwarebois"
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-        placement="right"
-        size={300}
-      >
-        <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
-          {links}
-          <Button
-            href={instagramUrl}
-            icon={<InstagramOutlined />}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Follow on Instagram
-          </Button>
-        </nav>
-      </Drawer>
-    </header>
+          <div className="hidden items-center gap-2 lg:flex xl:hidden">
+            <a className="nav-pill" href="#donate">
+              Donate
+            </a>
+            <a
+              className="instagram-action inline-flex"
+              href={instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <InstagramOutlined />
+              <span className="ml-2">Instagram</span>
+            </a>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="hidden md:inline-flex">
+              <Button
+                className="instagram-action"
+                href={instagramUrl}
+                icon={<InstagramOutlined />}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Follow
+              </Button>
+            </span>
+            <button
+              aria-label="Open navigation menu"
+              aria-expanded={drawerOpen}
+              aria-controls="mobile-menu-drawer"
+              className="mobile-menu-trigger xl:hidden"
+              onClick={() => setDrawerOpen(true)}
+              type="button"
+            >
+              <MenuOutlined />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {drawerOpen && typeof document !== "undefined"
+        ? createPortal(
+            <div className="mobile-drawer-shell xl:hidden">
+              <button
+                aria-label="Close navigation menu"
+                className="mobile-drawer-backdrop"
+                onClick={() => setDrawerOpen(false)}
+                type="button"
+              />
+              <aside
+                aria-label="Softwarebois navigation"
+                aria-modal="true"
+                className="mobile-drawer-panel"
+                id="mobile-menu-drawer"
+                role="dialog"
+              >
+                <div className="mobile-drawer-head">
+                  <span className="font-display text-lg font-black text-[#9b481f]">
+                    Softwarebois
+                  </span>
+                  <button
+                    aria-label="Close navigation menu"
+                    className="mobile-drawer-close"
+                    onClick={() => setDrawerOpen(false)}
+                    type="button"
+                  >
+                    <CloseOutlined />
+                  </button>
+                </div>
+
+                <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
+                  {links}
+                  <a
+                    className="instagram-action inline-flex"
+                    href={instagramUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <InstagramOutlined />
+                    <span>Follow on Instagram</span>
+                  </a>
+                </nav>
+              </aside>
+            </div>,
+            document.body,
+          )
+        : null}
+    </>
   );
 }
 
@@ -680,7 +804,7 @@ function GallerySection() {
           <Carousel
             autoplay={{ dotDuration: true }}
             autoplaySpeed={3200}
-            className="mobile-idols-carousel"
+            className="mobile-card-carousel"
             dots
             draggable
             infinite
@@ -724,7 +848,32 @@ function NimarjanamSection() {
           that closes the celebration.
         </SectionHeader>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="sm:hidden">
+          <Carousel
+            autoplay={{ dotDuration: true }}
+            autoplaySpeed={3200}
+            className="mobile-card-carousel"
+            dots
+            draggable
+            infinite
+            pauseOnDotsHover={false}
+            pauseOnFocus={false}
+            pauseOnHover={false}
+            speed={450}
+            swipe
+            swipeToSlide
+            touchMove
+            waitForAnimate={false}
+          >
+            {nimarjanam.map((item) => (
+              <div className="pb-10" key={item.year}>
+                <MediaCard actionLabel="View Immersion Album" item={item} />
+              </div>
+            ))}
+          </Carousel>
+        </div>
+
+        <div className="hidden gap-5 sm:grid sm:grid-cols-2 lg:grid-cols-4">
           {nimarjanam.map((item) => (
             <MediaCard actionLabel="View Immersion Album" item={item} key={item.year} />
           ))}
@@ -879,18 +1028,24 @@ function MembersSection() {
           Chaturthi celebrations successful.
         </SectionHeader>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="members-scroll" aria-label="Softwarebois members list">
           {members.map((member) => (
-            <Card className="border-[#ead8bd] text-center" key={member.name}>
-              <Image
-                alt={`${member.name}, ${member.role}`}
-                className="mx-auto h-28 w-28 rounded-full border-4 border-[#fff0d7] object-cover"
-                height={112}
-                loading="lazy"
-                src={member.image}
-                width={112}
-              />
-              <h3 className="font-display mt-5 text-2xl font-black text-[#9b481f]">
+            <Card className="member-card border-[#ead8bd] text-center" key={member.name}>
+              {member.image ? (
+                <Image
+                  alt={`${member.name}, ${member.role}`}
+                  className="member-avatar mx-auto rounded-full border-4 border-[#fff0d7] object-cover"
+                  height={112}
+                  loading="lazy"
+                  src={member.image}
+                  width={112}
+                />
+              ) : (
+                <div className="member-avatar member-placeholder mx-auto">
+                  {member.initials}
+                </div>
+              )}
+              <h3 className="font-display member-name mt-5 font-black text-[#9b481f]">
                 {member.name}
               </h3>
               <p className="mt-1 font-bold text-[#69584a]">{member.role}</p>
@@ -990,10 +1145,14 @@ function DonateSection() {
 
 function FindUsSection() {
   const contactRows = [
-    { icon: <PhoneOutlined />, label: "9059307481" },
-    { icon: <PhoneOutlined />, label: "9391277632" },
-    { icon: <PhoneOutlined />, label: "7386616435" },
-    { icon: <MailOutlined />, label: "softwarebois30@gmail.com" },
+    { icon: <PhoneOutlined />, label: "9059307481", href: "tel:9059307481" },
+    { icon: <PhoneOutlined />, label: "9391277632", href: "tel:9391277632" },
+    { icon: <PhoneOutlined />, label: "7386616435", href: "tel:7386616435" },
+    {
+      icon: <MailOutlined />,
+      label: "softwarebois30@gmail.com",
+      href: "mailto:softwarebois30@gmail.com",
+    },
   ];
 
   return (
@@ -1040,13 +1199,14 @@ function FindUsSection() {
             <h3 className="font-display text-2xl font-black text-[#241a16]">Contact Us</h3>
             <div className="mt-5 grid gap-3">
               {contactRows.map((row) => (
-                <div
-                  className="flex items-center gap-3 rounded-lg border border-[#ead8bd] bg-[#fff8ed] px-4 py-3 font-bold text-[#4a3729]"
+                <a
+                  className="flex min-h-12 items-center gap-3 rounded-lg border border-[#ead8bd] bg-[#fff8ed] px-4 py-3 font-bold text-[#4a3729] transition hover:border-[#be5b2e] hover:text-[#8f4423]"
+                  href={row.href}
                   key={row.label}
                 >
                   <span className="text-[#be5b2e]">{row.icon}</span>
                   <span className="break-all">{row.label}</span>
-                </div>
+                </a>
               ))}
             </div>
           </Card>
@@ -1062,7 +1222,7 @@ function SiteFooter() {
       <div className="container-page flex flex-col items-center justify-between gap-4 sm:flex-row">
         <span>2026 Softwarebois, Rampuram, Visakhapatnam</span>
         <a
-          className="inline-flex items-center gap-2 text-[#f6c453]"
+          className="instagram-action inline-flex"
           href={instagramUrl}
           target="_blank"
           rel="noreferrer"
