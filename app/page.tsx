@@ -243,19 +243,11 @@ const gangImages = [
   },
 ];
 
-type Member =
-  | {
-      name: string;
-      role: string;
-      image: string;
-      initials?: never;
-    }
-  | {
-      name: string;
-      role: string;
-      initials: string;
-      image?: never;
-    };
+type Member = {
+  name: string;
+  role: string;
+  image: string;
+};
 
 const members: Member[] = [
   {
@@ -265,38 +257,93 @@ const members: Member[] = [
   },
   {
     name: "Pavan",
-    role: "Organizer / Treasurer",
+    role: "Treasurer",
     image: `${ASSET_BASE}/Members/Pavan.png`,
   },
   {
-    name: "Akhil",
-    role: "Organizer",
+    name: "Akhil Hari",
+    role: "Event Organizer",
     image: `${ASSET_BASE}/Members/Akhilhari.jpeg`,
   },
   {
-    name: "Member 04",
-    role: "Volunteer",
-    initials: "S4",
+    name: "Balu",
+    role: "Creative Director",
+    image: `${ASSET_BASE}/Members/Balu.JPG`,
   },
   {
-    name: "Member 05",
-    role: "Volunteer",
-    initials: "S5",
+    name: "Chaitu",
+    role: "Event Coordinator",
+    image: `${ASSET_BASE}/Members/chaitu.jpg`,
   },
   {
-    name: "Member 06",
-    role: "Volunteer",
-    initials: "S6",
+    name: "Manu",
+    role: "Media Organizer",
+    image: `${ASSET_BASE}/Members/Manohar.jpeg`,
   },
   {
-    name: "Member 07",
-    role: "Volunteer",
-    initials: "S7",
+    name: "Adithya",
+    role: "Logistics Head",
+    image: `${ASSET_BASE}/Members/adithya.jpeg`,
   },
   {
-    name: "Member 08",
-    role: "Volunteer",
-    initials: "S8",
+    name: "Akhil",
+    role: "Community Head",
+    image: `${ASSET_BASE}/Members/Akhil.PNG`,
+  },
+  {
+    name: "Barath",
+    role: "Activities Lead",
+    image: `${ASSET_BASE}/Members/barath.jpg`,
+  },
+  {
+    name: "Divakar",
+    role: "Spirit Keeper",
+    image: `${ASSET_BASE}/Members/diva.jpg`,
+  },
+  {
+    name: "Rohit DJ",
+    role: "Energy Anchor",
+    image: `${ASSET_BASE}/Members/DJ.jpg`,
+  },
+  {
+    name: "Harsha",
+    role: "President",
+    image: `${ASSET_BASE}/Members/harsha.PNG`,
+  },
+  {
+    name: "Jayanth",
+    role: "Pooja Coordinator",
+    image: `${ASSET_BASE}/Members/jayanth.jpg`,
+  },
+  {
+    name: "Karthik",
+    role: "Art Member",
+    image: `${ASSET_BASE}/Members/Karthik.jpg`,
+  },
+  {
+    name: "Kiran",
+    role: "Volunteer Captain",
+    image: `${ASSET_BASE}/Members/kiran.JPG`,
+  },
+  {
+    name: "Nithu",
+    role: "Event Organizer",
+    image: `${ASSET_BASE}/Members/nithu.jpg`,
+  },
+  {
+    name: "Praveen",
+    role: "Art Manager",
+    image: `${ASSET_BASE}/Members/Praveen.jpeg`,
+  },
+  {
+    name: "Ravi",
+    role: "Art Member",
+    image: `${ASSET_BASE}/Members/ravi.jpg`,
+  },
+  {
+    name: "Sravan",
+    role: "Website Administrator",
+    image: `${ASSET_BASE}/Members/Sravan.jpeg`,
   },
 ];
 
@@ -1020,20 +1067,14 @@ function MembersSection() {
         <div className="members-scroll" aria-label="Softwarebois members list">
           {members.map((member) => (
             <Card className="member-card border-[#ead8bd] text-center" key={member.name}>
-              {member.image ? (
-                <Image
-                  alt={`${member.name}, ${member.role}`}
-                  className="member-avatar mx-auto rounded-full border-4 border-[#fff0d7] object-cover"
-                  height={112}
-                  loading="lazy"
-                  src={member.image}
-                  width={112}
-                />
-              ) : (
-                <div className="member-avatar member-placeholder mx-auto">
-                  {member.initials}
-                </div>
-              )}
+              <Image
+                alt={`${member.name}, ${member.role}`}
+                className="member-avatar mx-auto rounded-full border-4 border-[#fff0d7] object-cover"
+                height={112}
+                loading="lazy"
+                src={member.image}
+                width={112}
+              />
               <h3 className="font-display member-name mt-5 font-black text-[#9b481f]">
                 {member.name}
               </h3>

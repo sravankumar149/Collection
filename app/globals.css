@@ -367,20 +367,6 @@ a {
   height: 112px;
 }
 
-.member-placeholder {
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  border: 4px solid #fff0d7;
-  background:
-    radial-gradient(circle at 30% 25%, rgba(246, 196, 83, 0.8), transparent 34%),
-    linear-gradient(135deg, #0f766e, #be5b2e);
-  color: #fffdf8;
-  font-family: var(--display);
-  font-size: 2rem;
-  font-weight: 900;
-}
-
 .member-name {
   font-size: 1.5rem;
 }
@@ -464,10 +450,6 @@ a {
     width: 76px !important;
     height: 76px !important;
     margin: 0 !important;
-  }
-
-  .member-placeholder {
-    font-size: 1.35rem;
   }
 
   .member-name {
