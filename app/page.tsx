@@ -297,12 +297,12 @@ const members: Member[] = [
   },
   {
     name: "Divakar",
-    role: "Spirit Keeper",
+    role: "Sponsorship Lead",
     image: `${ASSET_BASE}/Members/diva.jpg`,
   },
   {
     name: "Rohit DJ",
-    role: "Energy Anchor",
+    role: "Support Champion",
     image: `${ASSET_BASE}/Members/DJ.jpg`,
   },
   {
@@ -344,6 +344,11 @@ const members: Member[] = [
     name: "Sravan",
     role: "Website Administrator",
     image: `${ASSET_BASE}/Members/Sravan.jpeg`,
+  },
+  {
+    name: "Krishna",
+    role: "Visarjan Head",
+    image: `${ASSET_BASE}/Members/krishna.jpeg`,
   },
 ];
 
@@ -587,7 +592,7 @@ function SiteHeader() {
               src={logoUrl}
               width={44}
             />
-            <span className="font-display text-xl font-black text-[#9b481f]">
+            <span className="font-display text-xl font-black italic leading-none tracking-normal text-[#9b481f] [text-shadow:0_1px_0_rgba(255,240,215,0.95)]">
               Softwarebois
             </span>
           </a>
@@ -654,7 +659,7 @@ function SiteHeader() {
                 role="dialog"
               >
                 <div className="mobile-drawer-head">
-                  <span className="font-display text-lg font-black text-[#9b481f]">
+                  <span className="font-display text-lg font-black italic leading-none tracking-normal text-[#9b481f] [text-shadow:0_1px_0_rgba(255,240,215,0.95)]">
                     Softwarebois
                   </span>
                   <button
