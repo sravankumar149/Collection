@@ -350,6 +350,61 @@ const members: Member[] = [
     role: "Visarjan Head",
     image: `${ASSET_BASE}/Members/krishna.jpeg`,
   },
+  {
+    name: "Koushik",
+    role: "Content Editor",
+    image: `${ASSET_BASE}/Members/koushik.jpg`,
+  },
+  {
+    name: "Sai",
+    role: "Event Manager",
+    image: `${ASSET_BASE}/Members/sai.jpg`,
+  },
+  {
+    name: "Naveen",
+    role: "Fund Raising Manager",
+    image: `${ASSET_BASE}/Members/Naveen.jpeg`,
+  },
+  {
+    name: "Abhi",
+    role: "Support Lead",
+    image: `${ASSET_BASE}/Members/Abhi.jpeg`,
+  },
+  {
+    name: "Vishnu",
+    role: "Collection Head",
+    image: `${ASSET_BASE}/Members/Vishnu.PNG`,
+  },
+  {
+    name: "Tharun",
+    role: "Art Member",
+    image: `${ASSET_BASE}/Members/Tharun.webp`,
+  },
+  {
+    name: "Ashok",
+    role: "Art Member",
+    image: `${ASSET_BASE}/Members/Ashok.jpg`,
+  },
+  {
+    name: "Vinay",
+    role: "Support Lead",
+    image: `${ASSET_BASE}/Members/Vinay.jpg`,
+  },
+  {
+    name: "Gangadhar",
+    role: "Event Organizer",
+    image: `${ASSET_BASE}/Members/gangadhar.jpg`,
+  },
+  {
+    name: "Sai Kiran",
+    role: "Wise President",
+    image: `${ASSET_BASE}/Members/saikiran.png`,
+  },
+  {
+    name: "Madhu",
+    role: "Content Creator",
+    image: `${ASSET_BASE}/Members/madhu.jpeg`,
+  },
 ];
 
 const donationUses = [
@@ -381,7 +436,7 @@ const winnerColumns: ColumnsType<WinnerRow> = [
 ];
 
 function getCountdown() {
-  const eventDate = new Date("2026-09-14T00:00:00");
+  const eventDate = new Date("2026-09-12T17:00:00+05:30");
   const diff = eventDate.getTime() - Date.now();
 
   if (diff <= 0) {
@@ -491,24 +546,34 @@ function Countdown() {
 
   if (displayTime.complete) {
     return (
-      <div className="stat-tile mt-8 inline-flex px-5 py-4 text-lg font-extrabold text-white">
-        Happy Ganesh Chaturthi
+      <div className="mt-8 w-full max-w-2xl">
+        <div className="agaman-loader">
+          <h2 className="agaman-word">Agaman</h2>
+        </div>
+        <div className="stat-tile mt-6 inline-flex px-5 py-4 text-lg font-extrabold text-white">
+          Happy Ganesh Chaturthi
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="mt-8 grid w-full max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-      {tiles.map((tile) => (
-        <div className="stat-tile px-4 py-4 text-center text-white" key={tile.label}>
-          <div className="font-display text-3xl font-black sm:text-4xl">
-            {String(tile.value).padStart(2, "0")}
+    <div className="mt-8 w-full max-w-2xl">
+      <div className="agaman-loader">
+        <h2 className="agaman-word">Agaman Loading......</h2>
+      </div>
+      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {tiles.map((tile) => (
+          <div className="stat-tile px-4 py-4 text-center text-white" key={tile.label}>
+            <div className="font-display text-3xl font-black sm:text-4xl">
+              {String(tile.value).padStart(2, "0")}
+            </div>
+            <div className="mt-1 text-xs font-bold uppercase text-[#ffe4b9]">
+              {tile.label}
+            </div>
           </div>
-          <div className="mt-1 text-xs font-bold uppercase text-[#ffe4b9]">
-            {tile.label}
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
