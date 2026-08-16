@@ -308,7 +308,7 @@ const members: Member[] = [
   {
     name: "Harsha",
     role: "President",
-    image: `${ASSET_BASE}/Members/harsha.PNG`,
+    image: `${ASSET_BASE}/Members/harsha.png`,
   },
   {
     name: "Jayanth",
@@ -1131,7 +1131,7 @@ function DonateSection() {
               <Tag color="cyan">BHIM</Tag>
             </div>
 
-            <h3 className="font-display mt-6 text-3xl font-black text-[#241a16]">
+            <h3 className="mt-6 text-3xl font-extrabold tracking-normal text-[#9b481f]">
               Support Softwarebois
             </h3>
             <p className="mt-3 leading-7 text-[#69584a]">
