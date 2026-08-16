@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   title: "Softwarebois | Rampuram Ganesh Chaturthi",
   description:
     "Softwarebois is a youth group from Rampuram village celebrating Ganesh Chaturthi with idols, immersion, lucky draws, donations, and community memories.",
+  icons: {
+    icon: [{ url: "/icon", sizes: "64x64", type: "image/png" }],
+    shortcut: [{ url: "/icon", sizes: "64x64", type: "image/png" }],
+  },
   openGraph: {
     title: "Softwarebois | Rampuram Ganesh Chaturthi",
     description:

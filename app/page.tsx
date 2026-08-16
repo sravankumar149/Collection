@@ -61,7 +61,7 @@ const idols = [
     year: "2026",
     date: "14 Sep 2026",
     sponsor: "Akhil",
-    image: `${ASSET_BASE}/2025/Lord%20ganesh_2025.jpg`,
+    image: `${ASSET_BASE}/2026%20blur/2026%20muragan.png`,
     alt: "Softwarebois 2026 Ganesha idol",
   },
   {
@@ -142,19 +142,7 @@ const nimarjanam = [
     image: `${ASSET_BASE}/2022/lord%20ganesh_2022.png`,
     alt: "Softwarebois 2022 Nimarjanam immersion",
     album: "https://photos.app.goo.gl/hHdzkdNEknZYwUfs5",
-  },
-  {
-    year: "2021",
-    meta: "Immersion album",
-    image: `${ASSET_BASE}/2021/lordganesh_2021.jpeg`,
-    alt: "Softwarebois 2021 Nimarjanam immersion",
-  },
-  {
-    year: "2019",
-    meta: "Immersion album",
-    image: `${ASSET_BASE}/2019/lordganesh_2019.jpeg`,
-    alt: "Softwarebois 2019 Nimarjanam immersion",
-  },
+  }
 ];
 
 type WinnerRow = {
@@ -742,7 +730,7 @@ function MediaCard({
 }) {
   return (
     <Card
-      className="h-full overflow-hidden border-[#ead8bd]"
+      className="flex h-full flex-col overflow-hidden border-[#ead8bd] [&_.ant-card-body]:flex [&_.ant-card-body]:flex-1 [&_.ant-card-body]:flex-col"
       cover={
         <FramedImage
           alt={item.alt}
@@ -772,17 +760,18 @@ function MediaCard({
         </p>
       )}
 
-      <Button
-        block
-        className="mt-5"
-        href={item.album}
-        target={item.album ? "_blank" : undefined}
-        rel={item.album ? "noreferrer" : undefined}
-        disabled={!item.album}
-        type={item.album ? "primary" : "default"}
-      >
-        {item.album ? actionLabel : "Gallery Coming Soon"}
-      </Button>
+      <div className="mt-auto pt-5">
+        <Button
+          block
+          href={item.album}
+          target={item.album ? "_blank" : undefined}
+          rel={item.album ? "noreferrer" : undefined}
+          disabled={!item.album}
+          type={item.album ? "primary" : "default"}
+        >
+          {item.album ? actionLabel : "Gallery Coming Soon"}
+        </Button>
+      </div>
     </Card>
   );
 }
