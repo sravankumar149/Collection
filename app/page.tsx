@@ -397,7 +397,7 @@ const members: Member[] = [
   },
   {
     name: "Sai Kiran",
-    role: "Wise President",
+    role: "Vice President",
     image: `${ASSET_BASE}/Members/saikiran.png`,
   },
   {
