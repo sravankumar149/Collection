@@ -405,6 +405,16 @@ const members: Member[] = [
     role: "Content Creator",
     image: `${ASSET_BASE}/Members/madhu.jpeg`,
   },
+  {
+    name: "Kishore",
+    role: "Logistics Head",
+    image: `${ASSET_BASE}/Members/kishore.jpeg`,
+  },
+  {
+    name: "Mahesh",
+    role: "Utsav Head",
+    image: `${ASSET_BASE}/Members/mahesh.jpeg`,
+  },
 ];
 
 const donationUses = [
